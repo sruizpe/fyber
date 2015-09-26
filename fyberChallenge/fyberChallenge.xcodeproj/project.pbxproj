@@ -15,6 +15,8 @@
 		E741D0081BB6C06F00DC299A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E741D0061BB6C06F00DC299A /* LaunchScreen.storyboard */; };
 		E741D0131BB6C06F00DC299A /* fyberChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0121BB6C06F00DC299A /* fyberChallengeTests.m */; };
 		E741D01E1BB6C06F00DC299A /* fyberChallengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D01D1BB6C06F00DC299A /* fyberChallengeUITests.m */; };
+		E741D02C1BB6C1B200DC299A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E741D02B1BB6C1B200DC299A /* Config.plist */; settings = {ASSET_TAGS = (); }; };
+		E741D02F1BB6C2E000DC299A /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D02E1BB6C2E000DC299A /* ConfigManager.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		E741D0191BB6C06F00DC299A /* fyberChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fyberChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E741D01D1BB6C06F00DC299A /* fyberChallengeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fyberChallengeUITests.m; sourceTree = "<group>"; };
 		E741D01F1BB6C06F00DC299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E741D02B1BB6C1B200DC299A /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		E741D02D1BB6C2E000DC299A /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigManager.h; path = Config/ConfigManager.h; sourceTree = "<group>"; };
+		E741D02E1BB6C2E000DC299A /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfigManager.m; path = Config/ConfigManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +108,14 @@
 			children = (
 				E741CFFB1BB6C06F00DC299A /* AppDelegate.h */,
 				E741CFFC1BB6C06F00DC299A /* AppDelegate.m */,
+				E741D0301BB6C2E400DC299A /* Config */,
 				E741CFFE1BB6C06F00DC299A /* ViewController.h */,
 				E741CFFF1BB6C06F00DC299A /* ViewController.m */,
 				E741D0011BB6C06F00DC299A /* Main.storyboard */,
 				E741D0041BB6C06F00DC299A /* Assets.xcassets */,
 				E741D0061BB6C06F00DC299A /* LaunchScreen.storyboard */,
 				E741D0091BB6C06F00DC299A /* Info.plist */,
+				E741D02B1BB6C1B200DC299A /* Config.plist */,
 				E741CFF81BB6C06F00DC299A /* Supporting Files */,
 			);
 			path = fyberChallenge;
@@ -138,6 +145,15 @@
 				E741D01F1BB6C06F00DC299A /* Info.plist */,
 			);
 			path = fyberChallengeUITests;
+			sourceTree = "<group>";
+		};
+		E741D0301BB6C2E400DC299A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E741D02D1BB6C2E000DC299A /* ConfigManager.h */,
+				E741D02E1BB6C2E000DC299A /* ConfigManager.m */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E741D02C1BB6C1B200DC299A /* Config.plist in Resources */,
 				E741D0081BB6C06F00DC299A /* LaunchScreen.storyboard in Resources */,
 				E741D0051BB6C06F00DC299A /* Assets.xcassets in Resources */,
 				E741D0031BB6C06F00DC299A /* Main.storyboard in Resources */,
@@ -273,6 +290,7 @@
 				E741D0001BB6C06F00DC299A /* ViewController.m in Sources */,
 				E741CFFD1BB6C06F00DC299A /* AppDelegate.m in Sources */,
 				E741CFFA1BB6C06F00DC299A /* main.m in Sources */,
+				E741D02F1BB6C2E000DC299A /* ConfigManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
