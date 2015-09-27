@@ -1,0 +1,111 @@
+//
+//  NetworkHelper.m
+//  fyberChallenge
+//
+//  Created by Sergio Ruiz Pérez on 26/09/15.
+//  Copyright © 2015 Fyber. All rights reserved.
+//
+
+#import "NetworkHelper.h"
+#import "User.h"
+#import "Constants.h"
+#import "NetRequestGetOffers.h"
+#import "NetResponseGetOffers.h"
+#import <AdSupport/ASIdentifierManager.h>
+
+@interface NetworkHelper()
+
+@property (nonatomic, strong) NSURLSession *urlSession;
+@property (nonatomic, strong) NSString *baseUrl;
+
+@property (nonatomic, strong) NSString *applicationKey;
+@property (nonatomic, strong) NSString *applicationId;
+@property (nonatomic, strong) User *currentUser;
+
+@end
+
+@implementation NetworkHelper
+
+- (id)init
+{
+    if (self = [super init])
+    {
+        // init network configuration
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        config.timeoutIntervalForRequest = 30.0;
+        config.timeoutIntervalForResource = 30.0;
+        config.requestCachePolicy = NSURLRequestReloadIgnoringCacheData;
+        [config setHTTPAdditionalHeaders:@{@"Accept": @"application/json"}];
+        
+        // init network session
+        _urlSession = [NSURLSession sessionWithConfiguration:config];
+        _baseUrl = [[ConfigManager sharedManager] urlAppGlobal];
+        
+        // init network params
+        _applicationKey = [[ConfigManager sharedManager] applicationKey];;
+        _applicationId = [[ConfigManager sharedManager] applicationId];
+        _currentUser = [[User alloc] initWithUserId:[[ConfigManager sharedManager] userId]];
+    }
+    return self;
+}
+
+
+#pragma mark - Class methods
+
++ (NetworkHelper *)sharedManager
+{
+    static NetworkHelper *_sharedManager = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedManager = [[self alloc] init];
+    });
+    
+    return _sharedManager;
+}
+
+
+#pragma mark - Public methods
+
+- (void)getOffersWithCompletion:(ArrayCompletionBlock)completion
+{
+    NetRequestGetOffers *netRequestGetOffers = [[NetRequestGetOffers alloc] init];
+    netRequestGetOffers.appid = self.applicationId;
+    netRequestGetOffers.uid = [self.currentUser userId];
+    netRequestGetOffers.locale = [[NSLocale preferredLanguages] firstObject];
+    netRequestGetOffers.osVersion = [[UIDevice currentDevice] systemVersion];
+    netRequestGetOffers.timestamp = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
+    netRequestGetOffers.appleIdfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    netRequestGetOffers.appleIdfaTrackingEnabled = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", self.baseUrl , URL_OFFERS];
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithString:urlString];
+    urlComponents.queryItems = [netRequestGetOffers queryItemsForAPIKey:self.applicationKey];
+    
+    [[_urlSession dataTaskWithURL:urlComponents.URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+    {
+        if (!error)
+        {
+            NSError *parsingError = nil;
+            NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
+            
+            if (!parsingError)
+            {
+                NetResponseGetOffers *netResponseGetOffers = [[NetResponseGetOffers alloc] initWithDictionary:responseDictionary];
+                
+                if ([netResponseGetOffers.code isEqualToString:@"OK"]) {
+                    if (completion) completion (netResponseGetOffers.offers, nil);
+                    return;
+                }
+                NSError *serverError = [NSError errorWithDomain:@"Fyber" code:0 userInfo:[NSDictionary dictionaryWithObject:netResponseGetOffers.message forKey:NSLocalizedDescriptionKey]];
+                if (completion) completion (nil, serverError);
+                return;
+            }
+            if (completion) completion (nil, parsingError);
+            return;
+        }
+        if (completion) completion (nil, error);
+    }] resume];
+}
+
+@end

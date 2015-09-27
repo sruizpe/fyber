@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E741CFFA1BB6C06F00DC299A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E741CFF91BB6C06F00DC299A /* main.m */; };
 		E741CFFD1BB6C06F00DC299A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E741CFFC1BB6C06F00DC299A /* AppDelegate.m */; };
-		E741D0001BB6C06F00DC299A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E741CFFF1BB6C06F00DC299A /* ViewController.m */; };
 		E741D0031BB6C06F00DC299A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E741D0011BB6C06F00DC299A /* Main.storyboard */; };
 		E741D0051BB6C06F00DC299A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E741D0041BB6C06F00DC299A /* Assets.xcassets */; };
 		E741D0081BB6C06F00DC299A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E741D0061BB6C06F00DC299A /* LaunchScreen.storyboard */; };
@@ -17,6 +16,16 @@
 		E741D01E1BB6C06F00DC299A /* fyberChallengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D01D1BB6C06F00DC299A /* fyberChallengeUITests.m */; };
 		E741D02C1BB6C1B200DC299A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E741D02B1BB6C1B200DC299A /* Config.plist */; settings = {ASSET_TAGS = (); }; };
 		E741D02F1BB6C2E000DC299A /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D02E1BB6C2E000DC299A /* ConfigManager.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0331BB6C69600DC299A /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0321BB6C69600DC299A /* NetworkHelper.m */; settings = {ASSET_TAGS = (); }; };
+		E741D03C1BB6CF5900DC299A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D03B1BB6CF5900DC299A /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0401BB7038800DC299A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D03F1BB7038800DC299A /* User.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0461BB7086600DC299A /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0451BB7086600DC299A /* Offer.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0491BB7186600DC299A /* NetRequestGetOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0481BB7186600DC299A /* NetRequestGetOffers.m */; settings = {ASSET_TAGS = (); }; };
+		E741D04D1BB7224B00DC299A /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D04C1BB7224B00DC299A /* CommonUtils.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0551BB755EA00DC299A /* NetResponseGetOffers.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0541BB755EA00DC299A /* NetResponseGetOffers.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0581BB812BE00DC299A /* OfferType.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0571BB812BE00DC299A /* OfferType.m */; settings = {ASSET_TAGS = (); }; };
+		E741D05B1BB812FB00DC299A /* OfferThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D05A1BB812FB00DC299A /* OfferThumbnail.m */; settings = {ASSET_TAGS = (); }; };
+		E741D05E1BB8130D00DC299A /* OfferPayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D05D1BB8130D00DC299A /* OfferPayout.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +50,6 @@
 		E741CFF91BB6C06F00DC299A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E741CFFB1BB6C06F00DC299A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E741CFFC1BB6C06F00DC299A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E741CFFE1BB6C06F00DC299A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E741CFFF1BB6C06F00DC299A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E741D0021BB6C06F00DC299A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E741D0041BB6C06F00DC299A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E741D0071BB6C06F00DC299A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +63,28 @@
 		E741D02B1BB6C1B200DC299A /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		E741D02D1BB6C2E000DC299A /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigManager.h; path = Config/ConfigManager.h; sourceTree = "<group>"; };
 		E741D02E1BB6C2E000DC299A /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfigManager.m; path = Config/ConfigManager.m; sourceTree = "<group>"; };
+		E741D0311BB6C69600DC299A /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkHelper.h; path = API/Helper/NetworkHelper.h; sourceTree = "<group>"; };
+		E741D0321BB6C69600DC299A /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkHelper.m; path = API/Helper/NetworkHelper.m; sourceTree = "<group>"; };
+		E741D03A1BB6CF5900DC299A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
+		E741D03B1BB6CF5900DC299A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
+		E741D03E1BB7038800DC299A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		E741D03F1BB7038800DC299A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
+		E741D0421BB7063800DC299A /* Blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Blocks.h; path = API/Definitions/Blocks.h; sourceTree = "<group>"; };
+		E741D0431BB7064E00DC299A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = API/Definitions/Constants.h; sourceTree = "<group>"; };
+		E741D0441BB7086600DC299A /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Offer.h; path = Model/Offer.h; sourceTree = "<group>"; };
+		E741D0451BB7086600DC299A /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Offer.m; path = Model/Offer.m; sourceTree = "<group>"; };
+		E741D0471BB7186600DC299A /* NetRequestGetOffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetRequestGetOffers.h; path = Model/Net/NetRequestGetOffers.h; sourceTree = "<group>"; };
+		E741D0481BB7186600DC299A /* NetRequestGetOffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetRequestGetOffers.m; path = Model/Net/NetRequestGetOffers.m; sourceTree = "<group>"; };
+		E741D04B1BB7224B00DC299A /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonUtils.h; path = Utils/CommonUtils.h; sourceTree = "<group>"; };
+		E741D04C1BB7224B00DC299A /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonUtils.m; path = Utils/CommonUtils.m; sourceTree = "<group>"; };
+		E741D0531BB755EA00DC299A /* NetResponseGetOffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetResponseGetOffers.h; path = Model/Net/NetResponseGetOffers.h; sourceTree = "<group>"; };
+		E741D0541BB755EA00DC299A /* NetResponseGetOffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetResponseGetOffers.m; path = Model/Net/NetResponseGetOffers.m; sourceTree = "<group>"; };
+		E741D0561BB812BE00DC299A /* OfferType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferType.h; path = Model/OfferType.h; sourceTree = "<group>"; };
+		E741D0571BB812BE00DC299A /* OfferType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferType.m; path = Model/OfferType.m; sourceTree = "<group>"; };
+		E741D0591BB812FB00DC299A /* OfferThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferThumbnail.h; path = Model/OfferThumbnail.h; sourceTree = "<group>"; };
+		E741D05A1BB812FB00DC299A /* OfferThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferThumbnail.m; path = Model/OfferThumbnail.m; sourceTree = "<group>"; };
+		E741D05C1BB8130D00DC299A /* OfferPayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferPayout.h; path = Model/OfferPayout.h; sourceTree = "<group>"; };
+		E741D05D1BB8130D00DC299A /* OfferPayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferPayout.m; path = Model/OfferPayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +137,11 @@
 			children = (
 				E741CFFB1BB6C06F00DC299A /* AppDelegate.h */,
 				E741CFFC1BB6C06F00DC299A /* AppDelegate.m */,
+				E741D0341BB6C69A00DC299A /* API */,
 				E741D0301BB6C2E400DC299A /* Config */,
-				E741CFFE1BB6C06F00DC299A /* ViewController.h */,
-				E741CFFF1BB6C06F00DC299A /* ViewController.m */,
+				E741D03D1BB6CF5E00DC299A /* Controller */,
+				E741D0411BB703A300DC299A /* Model */,
+				E741D04E1BB7225800DC299A /* Utils */,
 				E741D0011BB6C06F00DC299A /* Main.storyboard */,
 				E741D0041BB6C06F00DC299A /* Assets.xcassets */,
 				E741D0061BB6C06F00DC299A /* LaunchScreen.storyboard */,
@@ -154,6 +185,80 @@
 				E741D02E1BB6C2E000DC299A /* ConfigManager.m */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		E741D0341BB6C69A00DC299A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E741D0391BB6C7AE00DC299A /* Definitions */,
+				E741D0351BB6C6A600DC299A /* Helper */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		E741D0351BB6C6A600DC299A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E741D0311BB6C69600DC299A /* NetworkHelper.h */,
+				E741D0321BB6C69600DC299A /* NetworkHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		E741D0391BB6C7AE00DC299A /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				E741D0421BB7063800DC299A /* Blocks.h */,
+				E741D0431BB7064E00DC299A /* Constants.h */,
+			);
+			name = Definitions;
+			sourceTree = "<group>";
+		};
+		E741D03D1BB6CF5E00DC299A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E741D03A1BB6CF5900DC299A /* ViewController.h */,
+				E741D03B1BB6CF5900DC299A /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E741D0411BB703A300DC299A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E741D03E1BB7038800DC299A /* User.h */,
+				E741D03F1BB7038800DC299A /* User.m */,
+				E741D0441BB7086600DC299A /* Offer.h */,
+				E741D0451BB7086600DC299A /* Offer.m */,
+				E741D0561BB812BE00DC299A /* OfferType.h */,
+				E741D0571BB812BE00DC299A /* OfferType.m */,
+				E741D0591BB812FB00DC299A /* OfferThumbnail.h */,
+				E741D05A1BB812FB00DC299A /* OfferThumbnail.m */,
+				E741D05C1BB8130D00DC299A /* OfferPayout.h */,
+				E741D05D1BB8130D00DC299A /* OfferPayout.m */,
+				E741D04A1BB7187000DC299A /* Net */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E741D04A1BB7187000DC299A /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				E741D0471BB7186600DC299A /* NetRequestGetOffers.h */,
+				E741D0481BB7186600DC299A /* NetRequestGetOffers.m */,
+				E741D0531BB755EA00DC299A /* NetResponseGetOffers.h */,
+				E741D0541BB755EA00DC299A /* NetResponseGetOffers.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
+		E741D04E1BB7225800DC299A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E741D04B1BB7224B00DC299A /* CommonUtils.h */,
+				E741D04C1BB7224B00DC299A /* CommonUtils.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,10 +392,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E741D0001BB6C06F00DC299A /* ViewController.m in Sources */,
 				E741CFFD1BB6C06F00DC299A /* AppDelegate.m in Sources */,
 				E741CFFA1BB6C06F00DC299A /* main.m in Sources */,
+				E741D0401BB7038800DC299A /* User.m in Sources */,
+				E741D0581BB812BE00DC299A /* OfferType.m in Sources */,
+				E741D05E1BB8130D00DC299A /* OfferPayout.m in Sources */,
 				E741D02F1BB6C2E000DC299A /* ConfigManager.m in Sources */,
+				E741D05B1BB812FB00DC299A /* OfferThumbnail.m in Sources */,
+				E741D0551BB755EA00DC299A /* NetResponseGetOffers.m in Sources */,
+				E741D04D1BB7224B00DC299A /* CommonUtils.m in Sources */,
+				E741D0331BB6C69600DC299A /* NetworkHelper.m in Sources */,
+				E741D0491BB7186600DC299A /* NetRequestGetOffers.m in Sources */,
+				E741D03C1BB6CF5900DC299A /* ViewController.m in Sources */,
+				E741D0461BB7086600DC299A /* Offer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = fyberChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.fyber.fyberChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = fyberChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.fyber.fyberChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +632,7 @@
 				E741D0241BB6C06F00DC299A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E741D0251BB6C06F00DC299A /* Build configuration list for PBXNativeTarget "fyberChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +641,7 @@
 				E741D0271BB6C06F00DC299A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E741D0281BB6C06F00DC299A /* Build configuration list for PBXNativeTarget "fyberChallengeUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +650,7 @@
 				E741D02A1BB6C06F00DC299A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
