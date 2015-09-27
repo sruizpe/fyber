@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class OfferType;
-@class OfferThumbnail;
-@class OfferPayout;
+#import "OfferType.h"
+#import "OfferThumbnail.h"
+#import "OfferPayout.h"
 
 @interface Offer : NSObject
 

@@ -15,6 +15,12 @@
 
 + (NetworkHelper *)sharedManager;
 
+#pragma mark - Offers
+
 - (void)getOffersWithCompletion:(ArrayCompletionBlock)completion;
+
+#pragma mark - Images
+
+- (void)getImageUrl:(NSString *)url completion:(ObjectCompletionBlock)completion;
 
 @end

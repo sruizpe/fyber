@@ -51,6 +51,7 @@
         _applicationId = [[ConfigManager sharedManager] applicationId];
         _currentUser = [[User alloc] initWithUserId:[[ConfigManager sharedManager] userId]];
         
+        // init signature error
         _errorSignature = [NSError errorWithDomain:@"Fyber" code:0 userInfo:[NSDictionary dictionaryWithObject:@"Invalid response signature" forKey:NSLocalizedDescriptionKey]];
     }
     return self;
@@ -78,17 +79,25 @@
 {
     if (!signature)
         return NO;
-    
 
-//    NSString *composeString = [self.applicationKey stringByAppendingString:@"&"];
-//    composeString = [composeString stringByAppendingString:response];
-//    NSString *composeHashString = [CommonUtils SHA1Encryption:composeString];
-    
     NSString *composeString = [response stringByAppendingString:self.applicationKey];
     NSString *composeHashString = [CommonUtils SHA1Encryption:composeString lowerCase:YES];
     
+    
+    if (![signature isEqualToString:composeHashString]) {
+        NSLog(@"RESPONSE %@", response);
+        NSLog(@"COMPOSE_STRING %@", composeString);
+        NSLog(@"COMPOSE_HASH %@", composeHashString);
+        NSLog(@"SIGNATURE %@", signature);
+        NSLog(@"EQUALS? %d", [signature isEqualToString:composeHashString]);
+    }
+
+    
+    
     return [signature isEqualToString:composeHashString];
 }
+
+#pragma mark - Offers
 
 - (void)getOffersWithCompletion:(ArrayCompletionBlock)completion
 {
@@ -115,9 +124,9 @@
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
             NSDictionary *headersDictionary = [httpResponse allHeaderFields];
             NSString *signature = (headersDictionary) ? [headersDictionary objectForKey:kNetworkHelperHTTPHeaderKeyPathSignature] : nil;
-
-            NSString *bodyResponse = [NSString stringWithUTF8String:[data bytes]];
-
+            
+            NSString *bodyResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            
             if (![self isSignatureValid:signature forResponse:bodyResponse]) {
                 if (completion) completion (nil, self.errorSignature);
                 return;
@@ -140,6 +149,23 @@
                 return;
             }
             if (completion) completion (nil, parsingError);
+            return;
+        }
+        if (completion) completion (nil, error);
+    }] resume];
+}
+
+
+#pragma mark - Images
+
+- (void)getImageUrl:(NSString *)url completion:(ObjectCompletionBlock)completion
+{
+    [[_urlSession downloadTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error)
+    {
+        if (!error)
+        {
+            UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+            if (completion) completion (downloadedImage, nil);
             return;
         }
         if (completion) completion (nil, error);

@@ -26,6 +26,8 @@
 		E741D0581BB812BE00DC299A /* OfferType.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0571BB812BE00DC299A /* OfferType.m */; settings = {ASSET_TAGS = (); }; };
 		E741D05B1BB812FB00DC299A /* OfferThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D05A1BB812FB00DC299A /* OfferThumbnail.m */; settings = {ASSET_TAGS = (); }; };
 		E741D05E1BB8130D00DC299A /* OfferPayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D05D1BB8130D00DC299A /* OfferPayout.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0611BB877F500DC299A /* TableViewArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0601BB877F500DC299A /* TableViewArrayDataSource.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0641BB87AB200DC299A /* OfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0631BB87AB200DC299A /* OfferCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,10 @@
 		E741D05A1BB812FB00DC299A /* OfferThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferThumbnail.m; path = Model/OfferThumbnail.m; sourceTree = "<group>"; };
 		E741D05C1BB8130D00DC299A /* OfferPayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferPayout.h; path = Model/OfferPayout.h; sourceTree = "<group>"; };
 		E741D05D1BB8130D00DC299A /* OfferPayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferPayout.m; path = Model/OfferPayout.m; sourceTree = "<group>"; };
+		E741D05F1BB877F500DC299A /* TableViewArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewArrayDataSource.h; path = Utils/TableViewArrayDataSource.h; sourceTree = "<group>"; };
+		E741D0601BB877F500DC299A /* TableViewArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewArrayDataSource.m; path = Utils/TableViewArrayDataSource.m; sourceTree = "<group>"; };
+		E741D0621BB87AB200DC299A /* OfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferCell.h; path = View/OfferCell.h; sourceTree = "<group>"; };
+		E741D0631BB87AB200DC299A /* OfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferCell.m; path = View/OfferCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 				E741D0301BB6C2E400DC299A /* Config */,
 				E741D03D1BB6CF5E00DC299A /* Controller */,
 				E741D0411BB703A300DC299A /* Model */,
+				E741D0651BB87ABB00DC299A /* View */,
 				E741D04E1BB7225800DC299A /* Utils */,
 				E741D0011BB6C06F00DC299A /* Main.storyboard */,
 				E741D0041BB6C06F00DC299A /* Assets.xcassets */,
@@ -257,8 +264,19 @@
 			children = (
 				E741D04B1BB7224B00DC299A /* CommonUtils.h */,
 				E741D04C1BB7224B00DC299A /* CommonUtils.m */,
+				E741D05F1BB877F500DC299A /* TableViewArrayDataSource.h */,
+				E741D0601BB877F500DC299A /* TableViewArrayDataSource.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		E741D0651BB87ABB00DC299A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E741D0621BB87AB200DC299A /* OfferCell.h */,
+				E741D0631BB87AB200DC299A /* OfferCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +416,8 @@
 				E741D0581BB812BE00DC299A /* OfferType.m in Sources */,
 				E741D05E1BB8130D00DC299A /* OfferPayout.m in Sources */,
 				E741D02F1BB6C2E000DC299A /* ConfigManager.m in Sources */,
+				E741D0641BB87AB200DC299A /* OfferCell.m in Sources */,
+				E741D0611BB877F500DC299A /* TableViewArrayDataSource.m in Sources */,
 				E741D05B1BB812FB00DC299A /* OfferThumbnail.m in Sources */,
 				E741D0551BB755EA00DC299A /* NetResponseGetOffers.m in Sources */,
 				E741D04D1BB7224B00DC299A /* CommonUtils.m in Sources */,

@@ -7,9 +7,6 @@
 //
 
 #import "Offer.h"
-#import "OfferType.h"
-#import "OfferThumbnail.h"
-#import "OfferPayout.h"
 
 #define kOfferJSONKeyPathId                 @"offer_id"
 #define kOfferJSONKeyPathTitle              @"title"

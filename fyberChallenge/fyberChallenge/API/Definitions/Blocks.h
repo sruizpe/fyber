@@ -8,4 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^ObjectCompletionBlock)(id object, NSError *error);
+
 typedef void (^ArrayCompletionBlock)(NSArray *array, NSError *error);
