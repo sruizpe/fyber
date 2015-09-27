@@ -12,6 +12,9 @@
 #import "NetRequestGetOffers.h"
 #import "NetResponseGetOffers.h"
 #import <AdSupport/ASIdentifierManager.h>
+#import "CommonUtils.h"
+
+#define kNetworkHelperHTTPHeaderKeyPathSignature    @"X-Sponsorpay-Response-Signature"
 
 @interface NetworkHelper()
 
@@ -21,6 +24,8 @@
 @property (nonatomic, strong) NSString *applicationKey;
 @property (nonatomic, strong) NSString *applicationId;
 @property (nonatomic, strong) User *currentUser;
+
+@property (nonatomic, strong) NSError *errorSignature;
 
 @end
 
@@ -45,6 +50,8 @@
         _applicationKey = [[ConfigManager sharedManager] applicationKey];;
         _applicationId = [[ConfigManager sharedManager] applicationId];
         _currentUser = [[User alloc] initWithUserId:[[ConfigManager sharedManager] userId]];
+        
+        _errorSignature = [NSError errorWithDomain:@"Fyber" code:0 userInfo:[NSDictionary dictionaryWithObject:@"Invalid response signature" forKey:NSLocalizedDescriptionKey]];
     }
     return self;
 }
@@ -67,16 +74,34 @@
 
 #pragma mark - Public methods
 
+- (BOOL)isSignatureValid:(NSString *)signature forResponse:(NSString *)response
+{
+    if (!signature)
+        return NO;
+    
+
+//    NSString *composeString = [self.applicationKey stringByAppendingString:@"&"];
+//    composeString = [composeString stringByAppendingString:response];
+//    NSString *composeHashString = [CommonUtils SHA1Encryption:composeString];
+    
+    NSString *composeString = [response stringByAppendingString:self.applicationKey];
+    NSString *composeHashString = [CommonUtils SHA1Encryption:composeString lowerCase:YES];
+    
+    return [signature isEqualToString:composeHashString];
+}
+
 - (void)getOffersWithCompletion:(ArrayCompletionBlock)completion
 {
     NetRequestGetOffers *netRequestGetOffers = [[NetRequestGetOffers alloc] init];
     netRequestGetOffers.appid = self.applicationId;
     netRequestGetOffers.uid = [self.currentUser userId];
-    netRequestGetOffers.locale = [[NSLocale preferredLanguages] firstObject];
+    netRequestGetOffers.locale = @"de"; //[[NSLocale preferredLanguages] firstObject];
     netRequestGetOffers.osVersion = [[UIDevice currentDevice] systemVersion];
     netRequestGetOffers.timestamp = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
     netRequestGetOffers.appleIdfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     netRequestGetOffers.appleIdfaTrackingEnabled = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
+    netRequestGetOffers.ip = @"109.235.143.113";
+    netRequestGetOffers.offerTypes = @"112";
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@", self.baseUrl , URL_OFFERS];
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:urlString];
@@ -86,6 +111,19 @@
     {
         if (!error)
         {
+            // validate response signature
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+            NSDictionary *headersDictionary = [httpResponse allHeaderFields];
+            NSString *signature = (headersDictionary) ? [headersDictionary objectForKey:kNetworkHelperHTTPHeaderKeyPathSignature] : nil;
+
+            NSString *bodyResponse = [NSString stringWithUTF8String:[data bytes]];
+
+            if (![self isSignatureValid:signature forResponse:bodyResponse]) {
+                if (completion) completion (nil, self.errorSignature);
+                return;
+            }
+            
+            // parse response
             NSError *parsingError = nil;
             NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
             

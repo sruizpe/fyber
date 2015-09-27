@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSString *timestamp;
 @property (nonatomic, strong) NSString *hashkey;
 @property (nonatomic, strong) NSString *appleIdfa;
+@property (nonatomic, strong) NSString *ip;
+@property (nonatomic, strong) NSString *offerTypes;
 @property (nonatomic, assign) BOOL appleIdfaTrackingEnabled;
 
 - (NSArray *)queryItemsForAPIKey:(NSString *)apiKey;

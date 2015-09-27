@@ -10,6 +10,6 @@
 
 @interface CommonUtils : NSObject
 
-+ (NSString *)SHA1Encryption:(NSString *)string;
++ (NSString *)SHA1Encryption:(NSString *)string lowerCase:(BOOL)lowerCase;
 
 @end

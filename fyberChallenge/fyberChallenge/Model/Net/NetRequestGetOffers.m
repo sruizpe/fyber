@@ -17,6 +17,8 @@
 #define kNetRequestGetOffersAppleIdfa               @"apple_idfa"
 #define kNetRequestGetOffersAppleIdfaEnable         @"apple_idfa_tracking_enabled"
 #define kNetRequestGetOffersHashKey                 @"hashkey"
+#define kNetRequestGetOffersIp                      @"ip"
+#define kNetRequestGetOffersType                    @"offer_types"
 
 @implementation NetRequestGetOffers
 
@@ -45,6 +47,8 @@
     [paramsDictionary setObject:self.timestamp forKey:kNetRequestGetOffersTimestamp];
     [paramsDictionary setObject:self.appleIdfa forKey:kNetRequestGetOffersAppleIdfa];
     [paramsDictionary setObject:(self.appleIdfaTrackingEnabled ? @"true" : @"false") forKey:kNetRequestGetOffersAppleIdfaEnable];
+    [paramsDictionary setObject:self.ip forKey:kNetRequestGetOffersIp];
+    [paramsDictionary setObject:self.offerTypes forKey:kNetRequestGetOffersType];
     
     // hashkey calculation
     NSArray *sortedKeys = [[paramsDictionary allKeys] sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
@@ -61,7 +65,7 @@
         return nil;
     
     // hashkey encoding
-    NSString *hashKey = [CommonUtils SHA1Encryption:noHashKey];
+    NSString *hashKey = [CommonUtils SHA1Encryption:noHashKey lowerCase:YES];
     
     // add hash key
     [paramsDictionary setObject:hashKey forKey:kNetRequestGetOffersHashKey];
