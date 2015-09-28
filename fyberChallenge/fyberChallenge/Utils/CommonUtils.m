@@ -13,6 +13,9 @@
 
 + (NSString *)SHA1Encryption:(NSString *)string lowerCase:(BOOL)lowerCase
 {
+    if (!string || [string length] == 0)
+        return nil;
+    
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
     NSData *stringBytes = [string dataUsingEncoding:NSUTF8StringEncoding];
     

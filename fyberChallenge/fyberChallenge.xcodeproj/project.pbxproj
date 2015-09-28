@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E71B561E1BB8BF830055FB06 /* NetworkHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E71B561D1BB8BF830055FB06 /* NetworkHelperTests.m */; settings = {ASSET_TAGS = (); }; };
 		E741CFFA1BB6C06F00DC299A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E741CFF91BB6C06F00DC299A /* main.m */; };
 		E741CFFD1BB6C06F00DC299A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E741CFFC1BB6C06F00DC299A /* AppDelegate.m */; };
 		E741D0031BB6C06F00DC299A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E741D0011BB6C06F00DC299A /* Main.storyboard */; };
 		E741D0051BB6C06F00DC299A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E741D0041BB6C06F00DC299A /* Assets.xcassets */; };
 		E741D0081BB6C06F00DC299A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E741D0061BB6C06F00DC299A /* LaunchScreen.storyboard */; };
-		E741D0131BB6C06F00DC299A /* fyberChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0121BB6C06F00DC299A /* fyberChallengeTests.m */; };
 		E741D01E1BB6C06F00DC299A /* fyberChallengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D01D1BB6C06F00DC299A /* fyberChallengeUITests.m */; };
 		E741D02C1BB6C1B200DC299A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E741D02B1BB6C1B200DC299A /* Config.plist */; settings = {ASSET_TAGS = (); }; };
 		E741D02F1BB6C2E000DC299A /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D02E1BB6C2E000DC299A /* ConfigManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -28,6 +28,7 @@
 		E741D05E1BB8130D00DC299A /* OfferPayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D05D1BB8130D00DC299A /* OfferPayout.m */; settings = {ASSET_TAGS = (); }; };
 		E741D0611BB877F500DC299A /* TableViewArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0601BB877F500DC299A /* TableViewArrayDataSource.m */; settings = {ASSET_TAGS = (); }; };
 		E741D0641BB87AB200DC299A /* OfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0631BB87AB200DC299A /* OfferCell.m */; settings = {ASSET_TAGS = (); }; };
+		E741D0671BB8B4CA00DC299A /* CommonUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E741D0661BB8B4CA00DC299A /* CommonUtilsTests.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E71B561D1BB8BF830055FB06 /* NetworkHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelperTests.m; sourceTree = "<group>"; };
 		E741CFF51BB6C06F00DC299A /* fyberChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fyberChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E741CFF91BB6C06F00DC299A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E741CFFB1BB6C06F00DC299A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,7 +59,6 @@
 		E741D0071BB6C06F00DC299A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E741D0091BB6C06F00DC299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E741D00E1BB6C06F00DC299A /* fyberChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fyberChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E741D0121BB6C06F00DC299A /* fyberChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fyberChallengeTests.m; sourceTree = "<group>"; };
 		E741D0141BB6C06F00DC299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E741D0191BB6C06F00DC299A /* fyberChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fyberChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E741D01D1BB6C06F00DC299A /* fyberChallengeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fyberChallengeUITests.m; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		E741D0601BB877F500DC299A /* TableViewArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewArrayDataSource.m; path = Utils/TableViewArrayDataSource.m; sourceTree = "<group>"; };
 		E741D0621BB87AB200DC299A /* OfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferCell.h; path = View/OfferCell.h; sourceTree = "<group>"; };
 		E741D0631BB87AB200DC299A /* OfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferCell.m; path = View/OfferCell.m; sourceTree = "<group>"; };
+		E741D0661BB8B4CA00DC299A /* CommonUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtilsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +172,8 @@
 		E741D0111BB6C06F00DC299A /* fyberChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				E741D0121BB6C06F00DC299A /* fyberChallengeTests.m */,
+				E741D0661BB8B4CA00DC299A /* CommonUtilsTests.m */,
+				E71B561D1BB8BF830055FB06 /* NetworkHelperTests.m */,
 				E741D0141BB6C06F00DC299A /* Info.plist */,
 			);
 			path = fyberChallengeTests;
@@ -432,7 +435,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E741D0131BB6C06F00DC299A /* fyberChallengeTests.m in Sources */,
+				E71B561E1BB8BF830055FB06 /* NetworkHelperTests.m in Sources */,
+				E741D0671BB8B4CA00DC299A /* CommonUtilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
